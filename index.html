@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	
+	<title>PHP.TO.START - Torino 2013</title>
+	
+	<!-- Responsive and mobile friendly stuff -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+	<link href='http://fonts.googleapis.com/css?family=Exo:200,900,700,400|Pacifico' rel='stylesheet' type='text/css'>
+  
+	<!-- Included CSS Files -->
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/grid_12_percent.css">
+	<link rel="stylesheet" href="css/main.css">
+	
+
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="css/ie7_8.css">
+	<![endif]-->
+
+
+	
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>		
+	<script>
+	function initialize_map() {
+	        var mapOptions = {
+	          zoom: 15,
+	          center: new google.maps.LatLng(45.06448847650592, 7.6572346687316895),
+	          mapTypeId: google.maps.MapTypeId.ROADMAP
+	        }
+	        var map = new google.maps.Map(document.getElementById('map_canvas'),
+	                                      mapOptions);
+
+	        var I3P = new google.maps.Marker({
+	            position: new google.maps.LatLng(45.06539781596831, 7.657513618469238),
+	            map: map,
+	            icon: 'img/marker_i3p.png',
+				title:"I3P"
+	        });
+			var hotel_sanpaolo = new google.maps.Marker({
+	            position: new google.maps.LatLng(45.0598373, 7.6529137),
+	            map: map,
+	            icon: 'img/marker_hotel.png',
+				title:"Hotel Residence San Paolo"
+	        });
+			var stazione_portasusa = new google.maps.Marker({
+	            position: new google.maps.LatLng(45.068641008917346, 7.6639509201049805),
+	            map: map,
+	            icon: 'img/marker_trasporti.png',
+				title:"Stazione Metro e Treni Porta Susa"
+	        });
+			var fermata_tram_tribunale = new google.maps.Marker({
+	            position: new google.maps.LatLng(45.069232038276766, 7.660109996795654),
+	            map: map,
+	            icon: 'img/marker_trasporti.png',
+				title:"Fermata Autobus e Tram Palazzo di Giustizia"
+	        });
+			var fermata_tram_ferrucci = new google.maps.Marker({
+	            position: new google.maps.LatLng(45.06244240982845, 7.655389308929443),
+	            map: map,
+	            icon: 'img/marker_trasporti.png',
+				title:"Fermata Corso Peshiera/Ferrucci"
+	        });
+			var fermata_tram_ferrucci = new google.maps.Marker({
+	            position: new google.maps.LatLng(45.06577670314182, 7.655142545700073),
+	            map: map,
+	            icon: 'img/marker_trasporti.png',
+				title:"Fermata Corso Ferrucci/Bandiera"
+	        });
+			var pizzeria = new google.maps.Marker({
+	            position: new google.maps.LatLng(45.06510228222967, 7.654681205749512),
+	            map: map,
+	            icon: 'img/marker_ristoranti.png',
+				title:"Pizzeria Quelli Che Ben Pensano 2"
+	        });
+			var pizzeria_solitiamici = new google.maps.Marker({
+	            position: new google.maps.LatLng(45.06733769180998, 7.66270637512207),
+	            map: map,
+	            icon: 'img/marker_ristoranti.png',
+				title:"Ristorante Quattro Soldi"
+	        });
+			var pizzeria_solitiamici = new google.maps.Marker({
+	            position: new google.maps.LatLng(45.06497535380877, 7.659240961074829),
+	            map: map,
+	            icon: 'img/marker_ristoranti.png',
+				title:"Mensana - Mensa Studenti Politecnico"
+	        });
+	
+	      }
+    </script>
+
+</head>
+
+
+<body onload="initialize_map()">
+											
+
+	<div id="wrapper">
+		<div id="site_wrapper">
+			<div id="main_navigation">
+				<a name="top"></a> 
+				<nav id="site_nav">
+					<ul class="container">
+						<li><a href="#top" title="">PHP.TO.START</a></li>
+						<li><a href="#info" title="">La conferenza</a></li>
+						<li><a href="#call4paper" title="">Call for paper</a></li>
+                                                <li><a href="#sponsorizza" title="">Sponsorizza</a></li>
+						<li><a href="#location" title="">La location</a></li>
+					</ul>
+				</nav>
+			</div>
+
+			<header id="site_header" class="container">
+				<div class="grusp_header">
+					<p class="organizer"><a id="logo_grusp" class="organizer_logo" href="http://www.grusp.it/"><img src="img/logo_grusp.png" alt="GrUSP" title="GrUSP" width="140" height="67" /><span>Associazione Gruppo Utenti Sviluppatori PHP Italiani</span></a>
+					
+					<em class="plus"><img src="img/bg_plus.png" alt="bg_plus" width="12" height="12" /></em>
+                                        
+                                        <a id="logo_indigeni" class="organizer_logo" href="http://blog.indigenidigitali.com/"><img src="img/indigeni.png" alt="Indigeni Digitali" title="Indigeni Digitali" /><span>Indigeni Digitali</span></a>
+                                        
+                                        <em class="plus"><img src="img/bg_plus.png" alt="bg_plus" width="12" height="12" /></em>
+					
+					<a id="logo_grusp_to" class="organizer_logo" href="http://torino.grusp.org/"><img src="img/pugtorino.png" alt="PUG Torino" title="PUG Torino" /><span>PHP User Group Torino</span></a>
+					
+                                        <em class="plus"><img src="img/bg_plus.png" alt="bg_plus" width="12" height="12" /></em>
+                                        
+                                        <a id="logo_grusp_to" class="organizer_logo" href="http://www.skuola.net/"><img src="img/skuola.png" alt="Skuola.net" title="Skuola.net" /><span>Skuola.net</span></a></p>
+				
+					<h4>presentano</h4>
+				</div>
+				
+				<div class="event_title">
+					<div class="event_logo column_3">
+						<img src="img/phptostart_logo.png" alt="PHP.TO.START" />
+					</div>
+					<div class="event_name column_7">
+						<h1 id="fittext1">PHP.TO.START</h1>
+                                                <h3 id="fixtext3">Il PHP come strumento di business - III edizione</h3>
+						<h2 id="fittext2">TORINO, 22 Marzo 2013</h2>
+					</div>
+                     
+					<div class="clear"></div>
+				</div>
+				
+				
+				<div class="share">
+					<!-- AddThis Button BEGIN -->
+					<h4>Share</h4>
+					<div class="addthis_wrapper">
+						<div class="addthis_toolbox addthis_default_style ">
+						<a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:width="120"></a>
+						<a class="addthis_button_tweet"></a>
+						<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+						</div>
+						<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4feae2dc05ce85fb"></script>
+						<!-- AddThis Button END -->
+					</div>
+				</div>
+				<div class="separator"></div>
+
+			</header>
+			
+			<section class="alpha_8">
+				<div class="container group">
+								
+					
+					
+					<!-- Follow us -->
+					<div class="follow_us">
+						<h4 class="deco">Seguici!</h4>
+						
+						<ul class="social_grusp">
+							<li class="phptostart_fb"><a href="http://www.facebook.com/pages/PHPTOSTART/114025528727078" title="">Facebook</a></li>
+							<li class="phptostart_twitter"><a href="http://twitter.com/phptostart" title="">Twitter</a></li>
+						</ul>
+					</div>
+					
+					
+					
+				</div>
+				<div class="separator"></div>
+			</section>
+			
+			<a name="info"></a>
+			<section class="alpha_16">
+				<div class="container group">
+					
+					<div class="column_6 centered">
+						<h3 class="center">La conferenza</h3>
+						
+						<p>Il <strong>PHP.TO.START</strong> è una conferenza sull'utilizzo del linguaggio di programmazione <strong>PHP</strong> in ambito business.</p>
+                                                <p>Sono sempre più numerose le <i>start-up</i> e le aziende già affermate che utilizzano il PHP come strumento principale per lo sviluppo di applicazioni web. Più del 35% di tutti i siti internet del mondo utilizza questo linguaggio di programmazione.
+                                                   Il PHP rappresenta un'opportunità per tutte le aziende e il vantaggio competitivo derivante dalla sua adozione ne fa uno strumento strategico di fondamentale importanza per il business.</p>
+                                                <p>La conferenza PHP.TO.START vuole essere un momento di incontro per chi utilizza, o vuole iniziare ad utilizzare, il PHP a livello professionale. Per questo motivo abbiamo deciso di invitare professionisti del settore per presentare le ultime novità sul linguaggio e per portare la loro testimonianza nell'utilizzo di questo strumento <i>open source</i>. </p>
+					</div>
+					
+					
+					<div class="clear"></div>
+				</div>
+				<div class="separator"></div>
+			</section>					
+			
+                        <a name="call4paper"></a>
+			<section class="alpha_24">
+				<div class="container group">
+                                    <div class="column_6 centered">
+					<h3 class="center">Call for paper</h3>
+                                        <p align="center">Presto online!</p>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="separator"></div>
+                        </section>
+                        <!--
+			<a name="programma"></a>
+			<section class="alpha_24">
+				<div class="container group">
+					<h3 class="center">Il programma</h3>
+					
+					<table id="schedule" border="0" cellspacing="0" cellpadding="0">
+						<thead>
+							<tr>
+								<th>
+									Time
+								</th>
+								<th>
+									Track 1
+								</th>
+								
+							</tr>
+						</thead>	
+					  <tr class="common_event">
+					  	<td class="time">09:00 &ndash; 09:30</td>
+					    <td><h4><a href="#" title="">Check-in</a></h4></td>
+					  </tr>
+                                          
+					  <tr class="common_event">
+					  	<td class="time">09:35 &ndash; 10:00</td>
+                                                <td>
+                                                    <h4><a href="#" title="">Intro</a></h4>
+                                                    <a href="http://twitter.com/cirpo" title="cirpo">Alessandro Cinelli - @cirpo</a><br />
+													<a href="http://www.slideshare.net/cirpo/ZendFrameworkDay" title="" class="slides">Slide</a>
+
+                                                </td>
+					  </tr>
+                                          
+                        
+					  <tr class="break">
+                                              <td class="time">11:05 &ndash; 11:25</td>
+					    <td>
+					    	<h4><strong>Coffee Break</strong></h4>
+					    </td>
+					  </tr>
+					  
+                                          
+					  <tr class="break lunch">
+					 	<td class="time">13:00 &ndash;14:00</td>
+	
+					    <td><h4><strong>Lunch Break</strong></h4></td>
+					  </tr>
+					  
+                        
+                                          <tr class="break">
+                                              <td class="time">15:40 &ndash; 16:00</td>
+					    <td>
+					    	<h4><strong>Coffee Break</strong></h4>
+					    </td>
+					  </tr>
+					
+                        
+                                          <tr class="common_event">
+					  	<td class="time">18:15 &ndash; 18:30</td>
+					    <td><h4><a href="#" title="">Chiusura</a></h4></td>
+					  </tr>
+					</table>					
+								
+								
+					<div class="separator cnt_separator"></div>
+				</div>
+				
+				<a name="registrati"></a>
+				<div class="container group center">
+				
+					<h3>Registrati ora!</h3>
+					<div class="column_10 centered">
+
+					</div>
+				
+				</div>
+				<div class="separator"></div>
+			</section>
+                        -->
+			
+			<a name="location"></a>
+			<section class="alpha_32">
+				<div class="container group">
+					<h3 class="column_12">Location</h3>
+					<div class="column_6 map">
+						<div id="map_canvas" style="position: relative; background-color: rgb(229, 227, 223); overflow: hidden;"><div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default;"><div style="position: absolute; left: 0px; top: 0px; z-index: 200;"><div style="position: absolute; left: 0px; top: 0px; z-index: 101;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 201;"><div style="position: absolute; left: 0px; top: 0px; z-index: 102;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 70px; top: 128px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 326px; top: 128px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 70px; top: -128px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 70px; top: 384px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 326px; top: -128px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 326px; top: 384px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -186px; top: 128px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 582px; top: 128px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -186px; top: -128px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -186px; top: 384px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 582px; top: -128px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 582px; top: 384px;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 70px; top: 128px;"><canvas style="position: absolute; left: 0px; top: 0px;" height="256" width="256"></canvas><div style="width: 1px; height: 1px; position: absolute; left: 189px; top: 9px;"></div></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 326px; top: 128px;"><canvas style="position: absolute; left: 0px; top: 0px;" height="256" width="256"></canvas></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 70px; top: -128px;"><canvas style="position: absolute; left: 0px; top: 0px;" height="256" width="256"></canvas></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 70px; top: 384px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 326px; top: -128px;"><canvas style="position: absolute; left: 0px; top: 0px;" height="256" width="256"></canvas></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 326px; top: 384px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -186px; top: 128px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 582px; top: 128px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -186px; top: -128px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -186px; top: 384px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 582px; top: -128px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 582px; top: 384px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 202;"><div style="position: absolute; left: 0px; top: 0px; z-index: 104;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 100;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="width: 256px; height: 256px; position: absolute; left: 70px; top: 128px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 326px; top: 128px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 70px; top: -128px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 70px; top: 384px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 326px; top: -128px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 326px; top: 384px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -186px; top: 128px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 582px; top: 128px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -186px; top: -128px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -186px; top: 384px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 582px; top: -128px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 582px; top: 384px;"></div></div></div></div><div style="position: absolute; z-index: 0; left: 0px; top: 0px;"><div style="overflow: hidden; width: 642px; height: 340px;"><img style="width: 642px; height: 340px;" src="https://maps.googleapis.com/maps/api/js/StaticMapService.GetMapImage?1m2&amp;1i4372410&amp;2i3015296&amp;2e1&amp;3u15&amp;4m2&amp;1u642&amp;2u340&amp;5m3&amp;1e0&amp;2b1&amp;5sen-US&amp;token=3018"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="width: 256px; height: 256px; position: absolute; left: 70px; top: 128px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://mts0.googleapis.com/vt?lyrs=m@199040762&amp;src=apiv3&amp;hl=en-US&amp;x=17080&amp;s=&amp;y=11779&amp;z=15&amp;s=Gal&amp;style=api%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: 326px; top: 128px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://mts1.googleapis.com/vt?lyrs=m@199040762&amp;src=apiv3&amp;hl=en-US&amp;x=17081&amp;s=&amp;y=11779&amp;z=15&amp;s=Galile&amp;style=api%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: 70px; top: -128px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://mts0.googleapis.com/vt?lyrs=m@199000000&amp;src=apiv3&amp;hl=en-US&amp;x=17080&amp;s=&amp;y=11778&amp;z=15&amp;s=Ga&amp;style=api%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: 70px; top: 384px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://mts0.googleapis.com/vt?lyrs=m@199040771&amp;src=apiv3&amp;hl=en-US&amp;x=17080&amp;s=&amp;y=11780&amp;z=15&amp;s=Gali&amp;style=api%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: 326px; top: -128px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://mts1.googleapis.com/vt?lyrs=m@199040762&amp;src=apiv3&amp;hl=en-US&amp;x=17081&amp;s=&amp;y=11778&amp;z=15&amp;s=Galil&amp;style=api%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: 326px; top: 384px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://mts1.googleapis.com/vt?lyrs=m@199000000&amp;src=apiv3&amp;hl=en-US&amp;x=17081&amp;s=&amp;y=11780&amp;z=15&amp;s=Galileo&amp;style=api%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: -186px; top: 128px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://mts1.googleapis.com/vt?lyrs=m@199045302&amp;src=apiv3&amp;hl=en-US&amp;x=17079&amp;s=&amp;y=11779&amp;z=15&amp;s=&amp;style=api%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: 582px; top: 128px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://mts0.googleapis.com/vt?lyrs=m@199040054&amp;src=apiv3&amp;hl=en-US&amp;x=17082&amp;s=&amp;y=11779&amp;z=15&amp;s=G&amp;style=api%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: -186px; top: -128px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://mts1.googleapis.com/vt?lyrs=m@199000000&amp;src=apiv3&amp;hl=en-US&amp;x=17079&amp;s=&amp;y=11778&amp;z=15&amp;s=Galileo&amp;style=api%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: -186px; top: 384px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://mts1.googleapis.com/vt?lyrs=m@199000000&amp;src=apiv3&amp;hl=en-US&amp;x=17079&amp;s=&amp;y=11780&amp;z=15&amp;s=G&amp;style=api%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: 582px; top: -128px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://mts0.googleapis.com/vt?lyrs=m@199040054&amp;src=apiv3&amp;hl=en-US&amp;x=17082&amp;s=&amp;y=11778&amp;z=15&amp;s=&amp;style=api%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: 582px; top: 384px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://mts0.googleapis.com/vt?lyrs=m@199000000&amp;src=apiv3&amp;hl=en-US&amp;x=17082&amp;s=&amp;y=11780&amp;z=15&amp;s=Ga&amp;style=api%7Csmartmaps" draggable="false"></div></div></div></div></div><div style="margin: 2px 5px 2px 2px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a style="position: static; overflow: visible; float: none; display: inline;" target="_blank" href="http://maps.google.com/maps?ll=45.064488,7.657235&amp;z=15&amp;t=m&amp;hl=en-US" title="Click to see this area on Google Maps"><div style="width: 62px; height: 24px; cursor: pointer;"><img style="position: absolute; left: 0px; top: 0px; width: 62px; height: 24px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://maps.gstatic.com/mapfiles/google_white.png" draggable="false"></div></a></div><div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 83px; bottom: 0px;"><div style="height: 19px; -moz-user-select: none; line-height: 19px; padding-right: 2px; padding-left: 50px; background: -moz-linear-gradient(left center , rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0.5) 50px) repeat scroll 0% 0% transparent; font-family: Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right;"><a style="color: rgb(68, 68, 68); text-decoration: underline; cursor: pointer; display: none;">Map Data</a><span style="">Map data &copy;2012 Google</span><span style=""> - </span><a style="color: rgb(68, 68, 68); text-decoration: underline; cursor: pointer;" href="http://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank">Terms of Use</a></div></div><div style="background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Arial,sans-serif; color: rgb(34, 34, 34); box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2); z-index: 10000002; display: none; width: 256px; height: 148px; position: absolute; left: 171px; top: 80px;"><div style="padding: 0px 0px 10px; font-size: 16px;">Map Data</div><div style="font-size: 13px;">Map data &copy;2012 Google</div><div style="width: 10px; height: 10px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;"><img style="position: absolute; left: -18px; top: -44px; width: 68px; height: 67px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false"></div></div><div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;"><div style="font-family: Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data &copy;2012 Google</div></div><div style="font-size: 10px; height: 17px; background-color: rgb(245, 245, 245); border: 1px solid rgb(220, 220, 220); line-height: 19px; position: absolute; right: 0px; bottom: 0px;" class="gmnoprint"><a target="_new" title="Report errors in the road map or imagery to Google" style="font-family: Arial,sans-serif; font-size: 85%; font-weight: bold; padding: 1px 3px; color: rgb(68, 68, 68); text-decoration: none; position: relative; bottom: 1px;" href="http://maps.google.com/maps?ll=45.064488,7.657235&amp;z=15&amp;t=m&amp;hl=en-US&amp;skstate=action:mps_dialog$apiref:1">Report a map error</a></div><div class="gmnoprint" style="margin: 5px; -moz-user-select: none; position: absolute; left: 0px; top: 0px;" controlwidth="32" controlheight="84"><div style="cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; position: absolute; left: 0px; top: 0px;" controlwidth="32" controlheight="40"><div style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px;"><img style="position: absolute; left: -9px; top: -102px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; width: 1029px; height: 255px;" src="https://maps.gstatic.com/mapfiles/cb/mod_cb_scout/cb_scout_sprite_api_003.png" draggable="false"></div><div style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img style="position: absolute; left: -107px; top: -102px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; width: 1029px; height: 255px;" src="https://maps.gstatic.com/mapfiles/cb/mod_cb_scout/cb_scout_sprite_api_003.png" draggable="false"></div><div style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img style="position: absolute; left: -58px; top: -102px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; width: 1029px; height: 255px;" src="https://maps.gstatic.com/mapfiles/cb/mod_cb_scout/cb_scout_sprite_api_003.png" draggable="false"></div><div style="width: 32px; height: 40px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img style="position: absolute; left: -205px; top: -102px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; width: 1029px; height: 255px;" src="https://maps.gstatic.com/mapfiles/cb/mod_cb_scout/cb_scout_sprite_api_003.png" draggable="false"></div></div><div class="gmnoprint" style="opacity: 0.6; display: none; position: absolute;" controlwidth="0" controlheight="0"><img src="https://maps.gstatic.com/mapfiles/rotate2.png" draggable="false" style="-moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; cursor: pointer; width: 22px; height: 22px;" title="Rotate map 90 degrees"></div><div class="gmnoprint" controlwidth="22" controlheight="39" style="position: absolute; left: 5px; top: 45px;"><img style="width: 22px; height: 39px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://maps.gstatic.com/mapfiles/szc4.png" draggable="false"><div style="position: absolute; left: 0px; top: 0px; width: 22px; height: 17px; cursor: pointer;" title="Zoom in"></div><div style="position: absolute; left: 0px; top: 18px; width: 22px; height: 17px; cursor: pointer;" title="Zoom out"></div></div></div><div class="gmnoprint" style="margin: 5px; z-index: 0; position: absolute; cursor: pointer; right: 0px; top: 0px;"><div style="float: left;"><div style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(0, 0, 0); font-family: Arial,sans-serif; -moz-user-select: none; font-size: 13px; background: none repeat scroll 0% 0% rgb(255, 255, 255); padding: 1px 6px; border: 1px solid rgb(113, 123, 135); box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4); font-weight: bold; min-width: 28px;" title="Show street map">Map</div><div style="background-color: white; z-index: -1; padding-top: 2px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(113, 123, 135) rgb(113, 123, 135); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4); position: absolute; left: 0px; top: 27px; text-align: left; display: none;"><div style="color: rgb(0, 0, 0); font-family: Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 1px 8px 3px 5px; direction: ltr; text-align: left; white-space: nowrap;" title="Show street map with terrain"><span role="checkbox" style="position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px 1px 1px 1px; width: 13px; height: 13px; box-shadow: none; vertical-align: middle;"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img style="position: absolute; left: -52px; top: -44px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; width: 68px; height: 67px;" src="https://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false"></div></span><label style="vertical-align: middle; cursor: pointer;">Terrain</label></div></div></div><div style="float: left;"><div style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(51, 51, 51); font-family: Arial,sans-serif; -moz-user-select: none; font-size: 13px; background: none repeat scroll 0% 0% rgb(255, 255, 255); padding: 1px 6px; border-width: 1px 1px 1px 0px; border-style: solid solid solid none; border-color: rgb(113, 123, 135) rgb(113, 123, 135) rgb(113, 123, 135) -moz-use-text-color; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4); font-weight: normal; min-width: 51px;" title="Show satellite imagery">Satellite</div><div style="background-color: white; z-index: -1; padding-top: 2px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(113, 123, 135) rgb(113, 123, 135); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4); position: absolute; right: 0px; top: 27px; text-align: left; display: none;"><div style="color: rgb(184, 184, 184); font-family: Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 1px 8px 3px 5px; direction: ltr; text-align: left; white-space: nowrap; display: none;" title="Zoom in to show 45 degree view"><span role="checkbox" style="position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(241, 241, 241); border-radius: 1px 1px 1px 1px; width: 13px; height: 13px; box-shadow: none; vertical-align: middle;"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img style="position: absolute; left: -52px; top: -44px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; width: 68px; height: 67px;" src="https://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false"></div></span><label style="vertical-align: middle; cursor: pointer;">45°</label></div><div style="color: rgb(0, 0, 0); font-family: Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 1px 8px 3px 5px; direction: ltr; text-align: left; white-space: nowrap;" title="Show imagery with street names"><span role="checkbox" style="position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px 1px 1px 1px; width: 13px; height: 13px; box-shadow: none; vertical-align: middle;"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden;"><img style="position: absolute; left: -52px; top: -44px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; width: 68px; height: 67px;" src="https://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false"></div></span><label style="vertical-align: middle; cursor: pointer;">Labels</label></div></div></div></div></div></div>				
+					</div>
+					
+					<div class="column_6 legend right">
+						<dl>
+						  <dt class="event_location"><span><strong>Event location</strong></span></dt>
+						    <dd class="event_location">
+						    	<strong>c/o <a href="http://www.i3p.it/">I3P</a></strong>
+                                                        Incubatore di Imprese Innovative del Politecnico di Torino<br>
+							Via Pier Carlo Boggio 59<br>
+							10138 Torino, Italy
+							</dd>
+						  <dt class="eat"><span><strong>Dove mangiare</strong></span></dt>
+						    <dd>Ristoranti</dd>
+						  <dt class="get_to"><span><strong>Come arrivare</strong></span></dt>
+						    <dd>Trasporti</dd>
+						  <dt class="stay"><span><strong>Dove dormire</strong></span></dt>
+						    <dd>Alberghi</dd>
+						</dl>
+					</div>
+					
+					<div class="clear"></div>
+					
+					<div class="column_3">
+						<h5>In auto</h5>
+						<p>Dall'autostrada, seguire le indicazioni per il centro.</p>
+						<p>In città, seguire le indicazioni per il Politecnico o la stazione Porta Susa o il Tribunale (palazzo di giustizia).</p>
+						<p><strong>Dal Politecnico</strong>: avendo l'entrata principale alla propria destra, proseguire su corso Duca degli Abruzzi, svoltare a destra al primo incrocio con semaforo, su corso Peschiera. Svoltare poi a destra al secondo semaforo, per corso Ferrucci e infine prendere la prima strada a destra.</p>
+						<p><strong>Da Porta Susa</strong>: avendo l'entrata principale a destra, proseguire fino alla fine di corso Bolzano. Svoltare a destra su corso Vittorio Emanuele II e proseguire per 350m verso il Tribunale.</p>
+						<p><strong>Dal Tribunale</strong>: di fronte l'entrata, in corso Vittorio Emanuele II, svoltare su via Borsellino, verso il Museo del Carcere, e proseguire sulla stessa strada.</p>
+					</div>
+					
+					<div class="column_3">
+						<h5>In treno</h5>
+						<p>
+						<strong>Dalla stazione di  Porta Susa sotterranea (Frecciarossa)</strong>: uscire verso corso Inghilterra. Proseguire verso corso Vittorio Emanuele II. Arrivati di fronte al tribunale, girare a sinistra, su via Borsellino. Proseguire lungo la strada.
+						</p>
+						<p><strong>Dalla stazione di Porta Susa (piazza XVIII Dicembre)</strong>: Bus 56, direzione Tirreno, 10 fermante. Proseguire in direzione dell'autobus fino all'incrocio e girare a sinistra, su via Fratelli Bandiera. Alla fine della strada, girare a destra.
+						</p>
+						<p><strong>Dalla stazione di Porta Nuova</strong>:
+							</p><ul>
+								<li>
+									<strong>Bus 68</strong>, direzione via Frejus, 5 fermate. Di fronte al Tribunale, girare a sinistra e proseguire su via Borsellino.
+								</li>
+								<li>
+									<strong>Tram 9</strong>, direzione Stampalia, 5 fermate. Di fronte al Tribunale, girare a sinistra e proseguire su via Borsellino.
+								</li>
+								<li>
+									<strong>Bus 33/</strong>, direzioni Partigiani, 8 fermate. Su corso Ferucci andare a sinistra, poi la prima strada a destra.
+								</li>
+							</ul>
+							
+						<p></p>
+					</div>
+					
+					<div class="column_3">
+						<h5>In aereo</h5>
+						<p> 
+	                                                <a title="Aeroporto di Torino" href="http://www.aeroportoditorino.it/">Aereporto di Torino</a>.
+							Di fronte l'uscita degli arrivi, prendere l'autobus <a target="_blank" href="http://www.sadem.it/upload/orari/estivi/000268.pdf">Sadem per Torino</a>.
+							L'autobus ferma a Porta Susa (piazza XVIII Dicembre) e Porta Nuova. Seguire le indicazioni "In treno".
+						</p>
+					</div>
+					
+					<div class="column_3">
+						<h5>Pernottamento</h5>
+						<p> 
+						  	È possibile usufruire della tariffa speciale di x€ a notte presso l'<a target="_blank" href="http://www.sanpaolo-to.com/">Hotel Residence Sanpaolo</a>, facendo riferimento alla convenzione "<strong>phptostart</strong>".<br>
+							L'albergo è a <a target="_blank" href="http://goo.gl/maps/4PjXZ">poche centinaia di metri dall'I3P</a>, offre WiFi gratuito, colazione a buffet e parcheggio.<br><br>
+							Contatti:<br>
+							<a target="_blank" href="http://www.sanpaolo-to.com/">Hotel Residence Sanpaolo</a><br>Via Spalato 7, 10141 Torino<br>Tel +39 011.3853953<br>Fax +39 011.3352880<br><a href="mailto:info@sanpaolo-to.com">info@sanpaolo-to.com</a>
+							
+						
+						</p>
+					</div>
+				</div>
+
+				
+				<div class="clear"></div>
+			</section>
+			
+			<a name="sponsorizza"></a>
+			<section class="sponsors">
+				<div class="container group">
+					<h3 class="center">Sponsorizza</h3>
+					<div class="column_12">
+						<p>Un grande evento è fatto anche di grandi sponsor, perchè quindi non sfruttare l'occasione e contribuire alla conferenza?<br/> 
+						<a href="mailto:phptostart@grusp.org">Contattaci</a> per chiederci come sponsorizzarci!</p>
+					</div>
+					<div class="clear"></div>
+					
+					<div class="column_4">
+						<h4 class="gold">Gold</h4>
+						<span class="euro btn">€ 1000</span>
+						<ul class="benefit">
+							<li>Banner sul sito</li>
+							<li>Pubblicità nelle comunicazioni pre-evento</li>
+							<li>Autorizzazione a portare pubblicità e gadget (ie. volantini, adesivi, magliette)</li>
+							<li>Presenza logo sul programma stampato</li>							
+							<li>Potete posizionare il vostro flyer nella sala</li>
+						</ul>
+					</div>
+					
+					<div class="column_4">
+						<h4 class="silver">Silver</h4>
+						<span class="euro btn">€ 500</span>
+						<ul class="benefit">
+							<li>Banner sul sito</li>
+							<li>Pubblicità nelle comunicazioni pre-evento</li>
+							<li>Autorizzazione a portare pubblicità e gadget (ie. volantini, adesivi, magliette)</li>
+							<li>Presenza logo sul programma stampato</li>							
+						</ul>					
+					</div>
+					
+					<div class="column_4">
+						<h4 class="bronze">Bronze</h4>
+						<span class="euro btn">€ 300</span>
+						<ul class="benefit">
+							<li>Banner sul sito</li>
+							<li>Autorizzazione a portare pubblicità e gadget (ie. volantini, adesivi, magliette)</li>							
+						</ul>					
+					</div>
+					
+					<div class="clear"></div>
+				</div>
+				<div class="container group">
+					<h3>Gli sponsor</h3>
+					
+					<!--div class="gold_sponsors">
+						<h4 class="gold">Gold</h4>
+						<a class="banner" href="http://www.ideato.it" title="ideato">
+							<img src="img/sposnor_ideato.jpg" alt="sponsor ideato" />
+						</a>
+
+ 						<a class="banner" href="http://www.skuola.net" title="skuola.net">
+                                                        <img src="img/sponsor_skuola.png" alt="sponsor skuola" />
+                                                </a>
+
+
+						
+						<div class="clear"></div>
+					</div-->
+					
+					<!--div class="silver_sponsors">
+						<h4 class="silver">Silver</h4>
+						<a class="banner" href="http://adespresso.com" title="adespresso">
+							<img src="img/sponsor_adespresso.png" alt="sponsor adespresso" />
+						</a>
+						
+						<a class="banner" href="http://www.wellnet.it" title="wellnet">
+							<img src="img/sponsor_wellnet.jpg" alt="sponsor wellnet" />
+						</a>
+
+						<a class="banner" href="http://www.hivejobs.com" title="hivejobs">
+							<img src="img/sponsor_hivejobs.jpg" alt="sponsor hivejobs" />
+						</a>
+						<div class="clear"></div>
+					</div-->
+					
+					<div class="bronze_sponsors">
+						<h4 class="bronze">Bronze</h4>
+						
+						<a class="banner" href="http://www.phpbestpractices.it" title="php best practices">
+							<img src="img/php_best_practices.png" alt="php best practices" width="300" height="120" />
+						</a>												
+						<div class="clear"></div>
+					</div>
+					
+				</div>
+			</section>
+			
+			<footer id="site_footer">
+				<div class="container group">
+					<div class="ftr_info">
+						&copy; 2012-2013 Grusp. Tutti i diritti riservati.
+						<ul>
+						 	<li><a href="http://www.grusp.org" title="">Cos'&egrave; il Grusp?</a></li>
+                                                        <li><a href="http://blog.indigenidigitali.com/" title="">Cos'&egrave; Indigeni Digitali?</a></li>
+                                                        <li><a href="http://torino.grusp.org" title="">Cos'&egrave; il PUG Torino?</a></li>
+                                                        <li><a href="http://www.skuola.net" title="">Cos'&egrave; Skuola.net?</a></li>
+						 	<!--li><a href="#" title="">Privacy policy</a></li-->
+						 	<li><a href="mailto:phptostart@grusp.org" title="">Contattaci</a></li>
+						</ul>
+					</div>
+					
+					<a id="back_top" href="#top" title="">Torna su</a>
+				</div>
+			</footer>
+			
+		</div> <!-- Closes #wrapper -->
+	</div><!-- Closes #site_wrapper -->
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+ 	<script src="js/jquery.fittext.js"></script>
+	<script type="text/javascript">
+		$("#fittext1").fitText(.8);
+		$("#fittext2").fitText(1.6);
+		//$("#fittext3").fitText(1.1, { minFontSize: 50, maxFontSize: '75px' });
+	</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3559597-10']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>	
+</body>
+</html>
