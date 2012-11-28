@@ -10,7 +10,7 @@ Author URI: http://www.gnvpartners.com/
 /* BASIC PAGE SETUP ============================================================================= */
 
 body {
-	background-color: #607ddf;
+	background-color: #7080B8;
 	font-family: helvetica, verdana, arial, helve, sans-serif; 	
 	font-size: 15px;
 	line-height: 23px;
@@ -342,6 +342,11 @@ em.plus{
 }
 .event_logo {
 	text-align: center;	
+	background: rgba(0, 0, 0, 0.11);
+	border-radius: 30px;
+	padding: 10px;
+	box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2);
+	
 }
 .event_logo img{
 	width: 100%;
