@@ -688,6 +688,11 @@ a:hover.slides{
 	color: #7B7058;
 }
 
+.sponsors .mediap {
+    color: white;
+    font-size: 18px;
+}
+
 .sponsors li {
 	text-align: left;
 }
@@ -700,7 +705,7 @@ a:hover.slides{
 	font-weight: 800;	
 }
 
-.gold_sponsors, .silver_sponsors, .bronze_sponsors{
+.gold_sponsors, .silver_sponsors, .bronze_sponsors, .media_partner{
 	clear: both;
 	text-align: center;
 	margin-bottom: 60px;
@@ -716,7 +721,9 @@ a:hover.slides{
 	width: 13.5%;
 }
 
-
+.media_partner .banner{
+    width: 13%;
+}
 
 /* footer */
 
