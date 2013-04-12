@@ -725,6 +725,25 @@ a:hover.slides{
     width: 13%;
 }
 
+.foto {
+    width: 100%;
+    text-align : center;
+    min-height: 200px;
+    margin-bottom: 30px;
+}
+
+.foto img {
+   display: inline-block;
+	margin-left: 1%;
+	margin-right: 1%;
+	line-height: 0;
+	text-align: center;
+	border: 1px solid rgba(255,255,255,.8);
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,.5);
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.5);
+	box-shadow: 0 0 5px rgba(0,0,0,.5);
+}
+
 /* footer */
 
 .ftr_info{
