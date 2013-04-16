@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Presentation</title>
+
+        <meta charset="utf-8">
+        <script src="sironi_files/slides.asc"></script>
+        <link href="sironi_files/css.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .slides.template-default > article:not(.nobackground):not(.biglogo) {
+            background: url(images/onebip-logo-small.gif) 670px 625px no-repeat !important;
+            background-color: white !important;
+        }
+
+        article.biglogo {
+            background: none !important;
+            background-color: white !important;
+        }
+
+        .slides.template-default > article.pattern_title {
+            background: url(images/himym.png) !important;
+            padding: 0px;
+        }
+        .slides.template-default > article.pattern_title div {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            font-style: cursive;
+            font-family: 'Great Vibes', cursive;
+            font-size: 80px;
+            color: black;
+        }
+
+        .slides.template-default > article.pattern_explanation p {
+            font-size: 40px;
+            line-height: 1.2;
+            margin-top: 20px;
+        }
+
+
+    </style>
+    <meta content="width=1100,height=750" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"></head>
+
+    <body class="loaded" style="display: none">
+
+        <section class="slides layout-regular template-default">
+
+        <article class="biglogo current">
+        <h1>
+            Accettare le eredità
+        </h1>
+        <p>
+        Giorgio Sironi
+        </p>
+        <img style="margin-top: 50px;" src="sironi_files/onebip-logo.gif" height="120" width="447">
+        </article>
+
+        <article class="next">
+        <h3>
+            The problem
+        </h3>
+<pre class="prettyprint"><span class="pun">{</span><span class="pln">
+    name</span><span class="pun">:</span><span class="pln"> </span><span class="str">"tests"</span><span class="pun">,</span><span class="pln">
+    </span><span class="kwd">require</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+        </span><span class="str">"refactoring"</span><span class="pln">
+    </span><span class="pun">]</span><span class="pln">
+</span><span class="pun">}</span></pre>
+
+<pre class="prettyprint"><span class="pun">{</span><span class="pln">
+    name</span><span class="pun">:</span><span class="pln"> </span><span class="str">"refactoring"</span><span class="pun">,</span><span class="pln">
+    </span><span class="kwd">require</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+        </span><span class="str">"tests"</span><span class="pln">
+    </span><span class="pun">]</span><span class="pln">
+</span><span class="pun">}</span></pre>
+        </article>
+
+        <article class="far-next">
+        <h3>
+            Here's what I'll show you
+        </h3>
+        <ul class="build">
+            <li class="to-build">
+            Patterns: solutions to a problem in a context
+            </li>
+            <li class="to-build">
+            Known and maybe novel (couldn't find them on the Internet)
+            </li>
+            <li class="to-build">
+            By no means a complete list
+            </li>
+        </ul>
+
+        </article>
+
+        <article class="pattern_title nobackground">
+        <div>Characterization Test</div>
+        </article>
+
+        <article class="pattern_explanation">
+        <div class="build">
+            <p class="to-build"><strong>Context:</strong> black box testing</p>
+            <p class="to-build"><strong>Solution:</strong> break the chain by starting from very high-level tests</p>
+            <p class="to-build"><strong>Advantage:</strong> no modification of existing code</p>
+            <p class="to-build"><strong>Cost:</strong> setup and running
+ time e.g. clean database aggressively, perform so many queries, assert 
+on HTML, run with Selenium. Only high-level</p>
+        </div>
+        </article>
+
+        <article class="pattern_title nobackground">
+        <div>Extract and Override
+            <p style="margin-top:40px;">Too easy!</p>
+        </div>
+        </article>
+
+        <article class="pattern_title nobackground">
+        <div>Video Tape</div>
+        </article>
+        <article class="pattern_explanation">
+        <div class="build">
+            <p class="to-build"><strong>Context:</strong> use cases are unknown</p>
+            <p class="to-build"><strong>Solution:</strong> insert an object that registers HTTP request and responses, along with messages sent to the rest of the application</p>
+            <p class="to-build">then you can write unit tests for these "controllers/adapters"</p>
+            <p class="to-build"></p>
+            <p class="to-build"><strong>Advantage:</strong> weights for test cases</p>
+            <p class="to-build"><strong>Cost:</strong> data gathering time, legibility</p>
+        </div>
+        </article>
+        <article>
+        <pre class="prettyprint"><span class="kwd">class</span><span class="pln"> </span><span class="typ">Onebip_Tape</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> record</span><span class="pun">(</span><span class="pln">$response</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        $this</span><span class="pun">-&gt;</span><span class="pln">log</span><span class="pun">(</span><span class="str">'Request headers'</span><span class="pun">,</span><span class="pln"> $_SERVER</span><span class="pun">);</span><span class="pln">
+        $this</span><span class="pun">-&gt;</span><span class="pln">log</span><span class="pun">(</span><span class="str">'$_GET'</span><span class="pun">,</span><span class="pln"> $_GET</span><span class="pun">);</span><span class="pln">
+        $this</span><span class="pun">-&gt;</span><span class="pln">log</span><span class="pun">(</span><span class="str">'$_POST'</span><span class="pun">,</span><span class="pln"> $_POST</span><span class="pun">);</span><span class="pln">
+        $this</span><span class="pun">-&gt;</span><span class="pln">log</span><span class="pun">(</span><span class="str">'Response headers'</span><span class="pun">,</span><span class="pln"> headers_list</span><span class="pun">());</span><span class="pln">
+        $this</span><span class="pun">-&gt;</span><span class="pln">log</span><span class="pun">(</span><span class="str">'Response body'</span><span class="pun">,</span><span class="pln"> $response</span><span class="pun">);</span><span class="pln">
+
+        </span><span class="kwd">return</span><span class="pln"> $response</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></pre>
+<pre class="prettyprint"><span class="pln">$recordingTape </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Onebip_Tape</span><span class="pun">(</span><span class="pln">$filename</span><span class="pun">);</span><span class="pln">
+ob_start</span><span class="pun">(</span><span class="pln">array</span><span class="pun">(</span><span class="pln">$recordingTape</span><span class="pun">,</span><span class="pln"> </span><span class="str">'record'</span><span class="pun">));</span></pre>
+</article>
+
+<article class="pattern_title nobackground">
+<div>Sandbox Variable Space</div>
+</article>
+<article class="pattern_explanation">
+        <div class="build">
+<p class="to-build"><strong>Context:</strong> from script to class</p>
+<p class="to-build"><strong>Solution:</strong> Provide a fake variable space</p>
+<p class="to-build"><strong>Advantage:</strong> minimal modifications</p>
+<p class="to-build"><strong>Cost:</strong> multiple steps</p>
+</div>
+</article>
+<article>
+<pre class="prettyprint"><span class="pln">$_GET </span><span class="pun">=</span><span class="pln"> </span><span class="pun">...</span><span class="pln">
+$_POST </span><span class="pun">=</span><span class="pln"> </span><span class="pun">...</span><span class="pln">
+$_SERVER</span><span class="pun">[</span><span class="str">'REMOTE_ADDR'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">...</span></pre>
+<pre class="prettyprint"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">...()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    ob_start</span><span class="pun">();</span><span class="pln">
+    $globalVariable </span><span class="pun">=</span><span class="pln"> </span><span class="pun">...</span><span class="pln">
+    include $scriptName</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></pre>
+</article>
+
+<article class="pattern_title nobackground">
+<div>Formal Transformation</div>
+</article>
+<article class="pattern_explanation">
+        <div class="build">
+<p class="to-build"><strong>Context:</strong> horizontal refactoring</p>
+<p class="to-build"><strong>Solution:</strong> automated or manual checklist of substitution</p>
+<p class="to-build"><strong>Advantage:</strong> consistency, speed</p>
+<p class="to-build"><strong>Cost:</strong> no true automated refactoring in PHP, unreliable</p>
+</div>
+</article>
+<article>
+<pre class="prettyprint"><span class="pln">sed </span><span class="pun">-</span><span class="pln">i </span><span class="pun">-</span><span class="pln">e </span><span class="str">'s/header(/$this-&gt;header(/g *.php
+sed -i -e '</span><span class="pln">s</span><span class="pun">/</span><span class="kwd">exit</span><span class="pun">()/</span><span class="kwd">return</span><span class="str">/g' *.php
+sed -i -e 's/</span><span class="kwd">print</span><span class="pun">(</span><span class="str">/$this-&gt;write(/</span><span class="pln">g</span><span class="str">' *.php</span></pre>
+<p>`git diff` is your friend</p>
+<pre class="prettyprint"><span class="pun">@@</span><span class="pln"> </span><span class="pun">-</span><span class="lit">16</span><span class="pun">,</span><span class="lit">8</span><span class="pln"> </span><span class="pun">+</span><span class="lit">16</span><span class="pun">,</span><span class="lit">8</span><span class="pln"> </span><span class="pun">@@</span><span class="pln"> log</span><span class="pun">::</span><span class="pln">file</span><span class="pun">(</span><span class="str">'Start'</span><span class="pun">,</span><span class="pln">
+ 
+ 
+</span><span class="pun">-</span><span class="pln">header</span><span class="pun">(</span><span class="str">'HTTP/1.1 200 OK'</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">-</span><span class="pln">header</span><span class="pun">(</span><span class="str">"Content-Type: text/plain"</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">+</span><span class="pln">$this</span><span class="pun">-&gt;</span><span class="pln">header</span><span class="pun">(</span><span class="str">'HTTP/1.1 200 OK'</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">+</span><span class="pln">$this</span><span class="pun">-&gt;</span><span class="pln">header</span><span class="pun">(</span><span class="str">"Content-Type: text/plain"</span><span class="pun">);</span><span class="pln">
+ $result </span><span class="pun">=</span><span class="pln"> </span><span class="str">'OK'</span><span class="pun">;</span><span class="pln">
+ log</span><span class="pun">::</span><span class="pln">file</span><span class="pun">(</span><span class="str">'Flush'</span><span class="pun">,</span></pre>
+</article>
+
+
+<article class="pattern_title nobackground">
+<div>Parallel Design</div>
+</article>
+<article class="pattern_explanation">
+        <div class="build">
+<p class="to-build"><strong>Context:</strong> big horizontal refactoring</p>
+<p class="to-build"><strong>Solution:</strong> substitute one endpoint at the time, from a script to a class</p>
+<p class="to-build"><strong>Advantage:</strong> gradual, diversify risk during deployment</p>
+<p class="to-build"><strong>Cost:</strong> monitor for a day, and may never finish if you just leave it there</p>
+</div>
+</article>
+<article>
+<pre class="prettyprint"><span class="pln">  </span><span class="pun">.</span><span class="pln">
+  </span><span class="pun">├──</span><span class="pln"> src
+  </span><span class="pun">│</span><span class="pln">&nbsp;&nbsp; </span><span class="pun">└──</span><span class="pln"> </span><span class="typ">MyApi</span><span class="pln">
+  </span><span class="pun">│</span><span class="pln">&nbsp;&nbsp;     </span><span class="pun">└──</span><span class="pln"> </span><span class="typ">Colors</span><span class="pln">
+  </span><span class="pun">│</span><span class="pln">&nbsp;&nbsp;         </span><span class="pun">└──</span><span class="pln"> </span><span class="typ">Green</span><span class="pun">.</span><span class="pln">php
+  </span><span class="pun">└──</span><span class="pln"> web
+      </span><span class="pun">└──</span><span class="pln"> myapi
+              </span><span class="pun">├──</span><span class="pln"> blue</span><span class="pun">.</span><span class="pln">php
+              </span><span class="pun">└──</span><span class="pln"> red</span><span class="pun">.</span><span class="pln">php
+      </span></pre>
+<p>.htaccess</p>
+<pre class="prettyprint"><span class="typ">RewriteEngine</span><span class="pln"> on
+</span><span class="typ">RewriteCond</span><span class="pln"> </span><span class="pun">%{</span><span class="pln">REQUEST_FILENAME</span><span class="pun">}</span><span class="pln"> </span><span class="pun">!-</span><span class="pln">f
+</span><span class="typ">RewriteCond</span><span class="pln"> </span><span class="pun">%{</span><span class="pln">REQUEST_FILENAME</span><span class="pun">}</span><span class="pln"> </span><span class="pun">!-</span><span class="pln">d
+</span><span class="typ">RewriteRule</span><span class="pln"> </span><span class="pun">(.*)</span><span class="pln"> </span><span class="pun">../</span><span class="pln">entry</span><span class="pun">-</span><span class="pln">point</span><span class="pun">.</span><span class="pln">php</span></pre>
+</article>
+
+<article class="pattern_explanation">
+<p><strong>Video Tape</strong> to record test cases</p>
+<p><strong>Sandbox Variable Space</strong> to execute them on scripts</p>
+<p><strong>Formal Transformation</strong> from a script to a class</p>
+<p><strong>Parallel Design</strong> to continuously deploy</p>
+</article>
+
+<article>
+<h3>
+    Thank you!
+</h3>
+
+<ul>
+    <li>
+    Code from my work at <a href="http://corporate.onebip.com/blog">Onebip</a></li><a href="http://corporate.onebip.com/blog">
+        </a><li><a href="http://corporate.onebip.com/blog">
+        </a><a href="http://code.google.com/p/html5slides/">Slide template</a> by Google
+        </li>
+        <li>
+        The pattern titles are in the style of <a href="http://en.wikipedia.org/wiki/How_I_Met_Your_Mother">HIMYM</a>
+        </li>
+    </ul>
+    </article>
+
+    <div id="prev-slide-area" class="slide-area"></div><div id="next-slide-area" class="slide-area"></div></section>
+
+
+
+<link href="sironi_files/css_002.css" type="text/css" rel="stylesheet"><link href="sironi_files/styles.css" type="text/css" rel="stylesheet"><script src="sironi_files/prettify.asc" type="text/javascript"></script></body></html>
